@@ -2,6 +2,7 @@
   <div class="home">
     <img alt="Vue logo" src="../assets/logo.png" />
     <HelloWorld msg="Welcome to Your Vue.js App" />
+    <a-date-picker @change="onChange" v-model="time" />
   </div>
 </template>
 
@@ -12,7 +13,17 @@ import HelloWorld from "@/components/HelloWorld.vue";
 export default {
   name: "Home",
   components: {
-    HelloWorld
-  }
+    HelloWorld,
+  },
+  methods: {
+    onChange(date, dateString) {
+      console.log(date, dateString);
+    },
+  },
+  data() {
+    return {
+      time: "",
+    };
+  },
 };
 </script>
